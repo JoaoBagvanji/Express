@@ -1,0 +1,19 @@
+[
+  {
+    "nome": "Joao",
+    "email": "joao@gmail.com",
+    "saldo": 200
+  },
+  {
+    "nome": "Joao2",
+    "email": "joao2@gmail.com",
+    "dados": {},
+    "hash": "$2b$10$oJ14N7fcN58.NB3j2zl7oOermNcXIvYoFdO2xB.Oe7hQ7hKI8QRUS"
+  },
+  {
+    "nome": "Manuel",
+    "email": "manuel@gmail.com",
+    "dados": {},
+    "hash": "$2b$10$cbaafJEjW0TFdC8.4FQ9DOaT9PSp3f7uowCMO07KUQ9EE/gDEqSCa"
+  }
+]
