@@ -7,8 +7,20 @@ const dadosLocais = JSON.parse(fs.readFileSync('dados.json'))
 
 
 router.post('/LogIn', (req, res) =>{
-    const { nome } = req.body
-    res.status(200).send('OK Login')
+    const  { email, senha } = req.body
+
+    if (!email || !senha){
+        res.status(422).send('Definir email e senha')
+    }
+
+    const user = dadosLocais.find((usuario) =>usuario.email === email)
+
+
+    if (!user) {
+        res.status(404).send('Usuário não existe')
+    }
+
+    
 })
 
 router.post('/criar', (req, res) =>{
@@ -28,12 +40,8 @@ router.post('/criar', (req, res) =>{
         dadosLocais.push(dadosUsuario)
         const dadosConvertidos = JSON.stringify(dadosLocais, null, 2)
         fs.writeFileSync('dados.json', dadosConvertidos)
-        res.status(200).send({
-            email : email,
-            nome : nome
-        })
+        res.status(200)
     }
-    res.status(200).send('Ok Criar')
 })
 
 module.exports = router;
